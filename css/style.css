@@ -1,0 +1,158 @@
+  @keyframes logoAnimation {
+    from {
+      width: 25px;
+      opacity: 0;
+    }
+    to {
+      width: 475px;
+      opacity: 1;
+    }
+  }
+
+  #logo {
+    animation: logoAnimation;
+    animation-duration: 5s;
+  }
+  
+  body {
+    font-family: 'Poppins', serif;
+    background-image: url('concrete_seamless.png');
+    background-color: #f1f1f1;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; 
+  }
+  
+  nav .nav_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav .nav_links li a:link {
+    color: blue;
+  }
+  
+  nav .nav_links li a:visited {
+    color: blue;
+  }
+
+  .card > header {
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+  
+  .card {
+    width: 450px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+  
+  .pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .gallery img {
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+  }
+  
+  @media screen and (min-width: 900px) {
+    header {
+      flex-direction: row;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ffffff;
+    }
+
+    main header {
+      position: relative;
+      z-index: 0;
+      top: auto;
+    }
+    
+    header #logo {
+      justify-content: left;
+    }
+
+    header .nav_links {
+      justify-content: flex-end;
+    }
+
+    nav .nav_links {
+      flex-direction: row;
+    }
+
+    .pricing {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .card {
+        flex: 0 1 275px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    #logo {
+      animation: none;
+    }
+  }
+  
+  @media print and (orientation: portrait) {
+    body {
+      font-family: Arial, Helvetica;
+      background-image: none;
+    }
+  
+    nav .nav_links {
+      flex-direction: row;
+      gap: 70%;
+      justify-content: center;
+    }
+  
+    .pricing {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-end;
+    }
+  
+    .card {
+      flex: 0 1 325px;
+      border: solid 2px #45ADDD;
+    }
+  
+    #gallery {
+      display: none;
+    }
+
+    .gallery {
+      display: none;
+    }
+
+    .card ul li:nth-child(2)::after {
+      content: "\1F44D";
+    }
+  }
+  
